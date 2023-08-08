@@ -16,4 +16,6 @@ enum DiasSemana {
   Sabado = 7,
 }
 
-(numero: number) => console.log(DiasSemana[numero]);
+let Agenda = (numero: number): void => console.log(DiasSemana[numero]);
+
+Agenda(4);

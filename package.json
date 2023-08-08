@@ -1,0 +1,25 @@
+{
+  "name": "wpbase",
+  "version": "1.0.0",
+  "description": "programacao avansada web ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuriloRibg/Prog-Avan-Web.git"
+  },
+  "keywords": [
+    ""
+  ],
+  "author": "Murilo Ribeiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MuriloRibg/Prog-Avan-Web/issues"
+  },
+  "homepage": "https://github.com/MuriloRibg/Prog-Avan-Web#readme",
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}
