@@ -4,13 +4,12 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
   cursor: pointer;
 }
 
-a:hover,
-a:active {
-  color: #00B7FF;
+a:hover, a:active {
+  color: #00b7ff;
   text-decoration: underline;
 }
 
@@ -24,5 +23,5 @@ a.danger {
 
 input.ng-invalid.ng-touched {
   border: 1px solid red;
-} 
- 
+}
+/*# sourceMappingURL=inicio.css.map */
