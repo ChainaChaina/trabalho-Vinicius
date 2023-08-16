@@ -21,6 +21,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use("/bootstrap",express.static(__dirname+"/node_modules/bootstrap/dist"))
+
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -31,9 +33,7 @@ app.use(function (req, res, next) {
 app.use('/', appRoutes);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
-    return res.render('index');
-});
+app.use((req, res, next) => res.render('inicio'));
 
 
 module.exports = app; 

@@ -2,11 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', (req, res, next) => {
-    res.render('index');
-});
-
-router.get('/message', (req, res, next) => {
-    res.render('node', { message: "Nova página." });
+    res.render('inicio');
 });
 
 router.post('/message', (req, res, next) => {
@@ -15,7 +11,7 @@ router.post('/message', (req, res, next) => {
 });
 
 router.get('/message/:msgParam', (req, res, next) => {
-    res.render('node', { message: req.params.msgParam });
+    res.render('telaPrincipal', { message: req.params.msgParam });
 });
 
 module.exports = router; 

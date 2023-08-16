@@ -7,12 +7,10 @@ a {
   color: #00b7ff;
   cursor: pointer;
 }
-
 a:hover, a:active {
   color: #00b7ff;
   text-decoration: underline;
 }
-
 a.danger {
   color: red;
 }
@@ -24,4 +22,9 @@ a.danger {
 input.ng-invalid.ng-touched {
   border: 1px solid red;
 }
-/*# sourceMappingURL=inicio.css.map */
+
+.formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=inicio.css.map */
