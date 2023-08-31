@@ -1,40 +1,16 @@
 var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const routes = require('./routes/index');
 
-var appRoutes = require('./routes/app');
+const app = express();
+const port = 3000;
 
-var app = express();
+const mongo = require('./models/index');
+mongo().catch(console.dir);
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+routes(app);
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use("/bootstrap",express.static(__dirname+"/node_modules/bootstrap/dist"))
-
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
-    next();
+app.listen(port, () => {
+  console.log('Sevidor rodando http://localhost:3000');
 });
 
-app.use('/', appRoutes);
-
-// catch 404 and forward to error handler
-app.use((req, res, next) => res.render('inicio'));
-
-
-module.exports = app; 
- 
+module.exports = app;
