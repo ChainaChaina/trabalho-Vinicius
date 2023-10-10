@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { MessageComponent } from './components/messages/message.component';
 import { FormularioComponent } from './components/zformcomponente/formulario.component';
 import { MessageListComponent } from './components/messages-list/message-list.component';
+import { EmpregadoComponent } from './components/Empregado/empregado.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { MessageListComponent } from './components/messages-list/message-list.co
     MessageComponent,
     FormularioComponent,
     MessageListComponent,
+    EmpregadoComponent
   ],
   imports: [BrowserModule, FormsModule],
   bootstrap: [AppComponent],

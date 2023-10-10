@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <app-message></app-message>
@@ -8,4 +8,14 @@
       </div>
     </div>
   </div>
+</div> -->
+<div>
+  <app-empregado *ngFor="let item of empregadoService.getEmpregados()" [emp]="item"></app-empregado>
 </div>
+
+<div>
+  <input type="text" name="name" id="input-name" [(ngModel)]="empregado.name">
+  <input type="number" name="age" id="input-age" [(ngModel)]="empregado.age">
+  <button type="submit" class="btn btn-primary" (click)="onEmpregadoServiceSave()">Adicionar Empregado</button>
+</div>
+
