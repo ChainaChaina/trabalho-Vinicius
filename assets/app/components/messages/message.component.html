@@ -1,14 +1,18 @@
-<article class="panel-default">
-  <div class="panel-body">
-    {{ message.content }}
+<div class="col-md-8 col-md-offset-2">
+  <div class="form-group">
+    <label for="input-message">Conteudo</label>
+    <input
+      type="text"
+      id="input-message"
+      class="form-control"
+      #refLocalInputMessage
+    />
   </div>
-  <footer class="panel-footer">
-    <div class="author">
-      {{ message.author }}
-    </div>
-    <div class="config">
-      <a href="#">Edit</a>
-      <a href="#">Delete</a>
-    </div>
-  </footer>
-</article>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    (click)="onSave(refLocalInputMessage.value)"
+  >
+    Salvar
+  </button>
+</div>

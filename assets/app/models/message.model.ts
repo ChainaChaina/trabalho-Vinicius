@@ -4,10 +4,7 @@ export class Message {
   userId: string;
   userName: string;
 
-  constructor(
-    content: string,
-    userName: string
-  ) {
+  constructor(content: string, userName: string) {
     this.content = content;
     this.userName = userName;
   }

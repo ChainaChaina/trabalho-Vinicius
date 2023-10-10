@@ -1,8 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <app-formulario (inserir)="inserir($event)"></app-formulario>
-      <app-message [pessoas]="pessoas"></app-message>
+      <app-message></app-message>
+
+      <div class="m-5">
+        <app-message-list></app-message-list>
+      </div>
     </div>
   </div>
 </div>

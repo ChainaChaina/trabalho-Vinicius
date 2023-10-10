@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from './models/person.model';
+import { MessageService } from './services/message.service';
 
 @Component({
-  selector: 'my-app',
+  selector: 'app-component',
   templateUrl: './app.component.html',
+  providers: [MessageService],
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {}

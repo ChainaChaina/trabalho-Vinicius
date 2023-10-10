@@ -7,14 +7,13 @@ import { Message } from '../../models/message.model';
   selector: 'app-message',
   templateUrl: './message.component.html',
   styleUrls: ['./style.css'],
-  providers: [MessageService]
 })
 export class MessageComponent {
-  constructor (private readonly messageService: MessageService){}
+  constructor(private readonly messageService: MessageService) {}
 
-  onSave(textoConsole: string){
+  onSave(textoConsole: string) {
+    console.log('Entrei' + textoConsole);
     const messageAux = new Message(textoConsole, 'Vini');
     this.messageService.addMessage(messageAux);
-    console.log(textoConsole);
   }
 }
