@@ -1,0 +1,22 @@
+<div class="col-md-8 col-md-offset-2">
+  <form
+    (ngSubmit)="onSubmit(refLocalForm)"
+    #refLocalForm="ngForm"
+    ngNativeValidate
+  >
+    <div class="form-group">
+      <label for="input-message">Conteudo</label>
+      <input
+        type="text"
+        id="input-message"
+        class="form-control"
+        name="myContextngForm"
+        ngModel
+        required
+        oninvalid="this.setCustomValidity('Campo Vazio')"
+        oninput="setCustomValidity('')"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+  </form>
+</div>
