@@ -1,1 +1,17 @@
-<h1>Componente de autenticação</h1>
+<nav class="col-md-8 col-md-offset-2">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['signup']">SignUp</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['signin']">SignIn</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['logout']">LogOut</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="row spacing">
+  <router-outlet></router-outlet>
+</div>

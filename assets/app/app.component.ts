@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from './models/person.model';
 import { MessageService } from './services/message.service';
 import { EmpregadoService } from './services/empregado.service';
 import { Empregado } from './models/empregado.model';

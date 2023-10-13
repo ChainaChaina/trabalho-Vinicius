@@ -1,6 +1,8 @@
-<div class="card" *ngFor="let item of messageS">
-  <h5 class="card-header">{{ item.content }}</h5>
-  <div class="card-body">
-    <p class="card-text">{{ item.userName }}</p>
-  </div>
+<div class="col-md-8 col-md-offset-2">
+  <app-message
+    [messageVarClasse]="msg"
+    (editClicked_MessageMetodoClasse)="(msg)"
+    *ngFor="let msg of messageS"
+  >
+  </app-message>
 </div>
