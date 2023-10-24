@@ -1,13 +1,51 @@
-<h1>A Node view</h1>
-{{message}}
-<form action='/node-mongodb-mongoose-user' method='post'>
-  <input type='text' name='emailBody' id="emailBody"/>
-  <button type='submit'>Enviar</button>
-</form>
 
-<h1>Dados de User Recuperador</h1>
-{{firstNameV}}<br />
-{{lastNameV}}<br />
-{{passwordV}}<br />
-{{emailV}}<br />
-{{messagesV}}<br />
+<div class="col col-md-8 col-md-offset-2 mt-3">
+  <form [formGroup]="myForm" action='/node-mongodb-mongoose-user' method='post'>
+    <div class="form-group">
+      <label for="firstName">Nome:</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        class="form-control"
+        formControlName="firstNameTS"
+      />
+    </div>
+    <div class="form-group">
+      <label for="lastName">SobreNome:</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        class="form-control"
+        formControlName="lastNameTS"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-control"
+        formControlName="emailTS"
+      />
+    </div>
+    <div class="form-group">
+      <label for="pass">Senha:</label>
+      <input
+        type="password"
+        id="pass"
+        name="password"
+        class="form-control"
+        formControlName="passwordTS"
+      />
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid">
+    <name class="bn btn-primary" type="submit" [disabled]="!myForm.valid">
+
+      Cadastrar
+    </button>
+  </form>
+</div>
+

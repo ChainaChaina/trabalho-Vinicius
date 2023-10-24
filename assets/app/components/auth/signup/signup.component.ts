@@ -21,7 +21,8 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
+    
     console.log(this.myForm.value);
-    this.myForm.reset();
+    // this.myForm.reset();
   }
 }

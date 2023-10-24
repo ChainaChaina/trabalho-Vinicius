@@ -3,8 +3,15 @@ const router = Router();
 
 const User = require('../models/user');
 
-router.get('/node-mongodb-mongoose-user', function (req, res, next) {
+
+// faz singin
+router.get('/singin', function (req, res, next) {
   res.render('node');
+});
+
+// faz login
+router.get('/login', function (req, res, next) {
+  res.render('login');
 });
 
 router.get("/user", async (req, res, next) => {
@@ -17,13 +24,13 @@ router.get("/user", async (req, res, next) => {
 });
 
 router.post('/node-mongodb-mongoose-user', async (req, res, next) => {
-  const { emailBody } = req.body;
+  const { email,firstName, password, lastName } = req.body;
 
   const userObject = new User({
-    firstName: 'Vinicius',
-    lastName: 'Rosalen',
-    password: 'Segredo',
-    email: emailBody,
+    firstName: firstName,
+    lastName: lastName,
+    password: password,
+    email: email,
   });
 
   await userObject.save();
@@ -31,19 +38,24 @@ router.post('/node-mongodb-mongoose-user', async (req, res, next) => {
   res.redirect('/node-mongodb-mongoose-user');
 });
 
-router.get('/node-mongodb-mongoose-user-busca', function (req, res, next) {
-  User.findOne({}, function (err, documents) {
-    if (err) {
-      return res.send('Error!! :-(');
-    }
-    res.render('node', {
+router.get('/node-mongodb-mongoose-user-busca', async function (req, res, next) {
+  var {email, password} = req.query;
+  console.log('ewre')
+  console.log('aaaa',req.query.password)
+  let documents = await User.findOne({email:req.query.email ,password:req.query.password})
+  console.log(email)
+  console.log(documents)
+  setTimeout(()=>{
+    console.log(req.body)
+  },1000)
+  res.render('logged', {
       firstNameV: documents.firstName,
       lastNameV: documents.lastName,
       passwordV: documents.password,
       emailV: documents.email,
-      messagesV: documents.message,
-    });
+      messagesV: documents.message
   });
+
 });
 
 module.exports = router;
